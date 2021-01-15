@@ -8,13 +8,15 @@ class UsersController < ApplicationController
     end
 
     def create
-        @user = User.new(user_params)
+        @user = User.create(user_params)
 
         if @user.save
-
+            flash.notice = "user saved!"
         else
-            
+            flash.alert = "user NOT saved!"
         end
+
+        redirect_to new_users_path
     end
 
     private

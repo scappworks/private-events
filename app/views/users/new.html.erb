@@ -1,0 +1,14 @@
+<h1>This is the new viewer page!</h1>
+
+<%= form_with model: @users do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %><br>
+
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+
+    <%= f.submit %>
+<% end %>
