@@ -16,7 +16,7 @@ class UsersController < ApplicationController
             flash.alert = "user NOT saved!"
         end
 
-        redirect_to new_users_path
+        redirect_to new_user_path
     end
 
     private
