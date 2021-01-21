@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
         if @user && @user.authenticate(params[:id][:password_digest])
             session[:id] = @user.id
             flash.now[:notice] = "user logged in"
-            redirect_to user_url(@user)
+            redirect_to user_path(@user)
         else
             flash.now[:alert] = "something is wrong"
             redirect_to new_session_path
