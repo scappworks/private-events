@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
         if @user.save
             flash.notice = "user saved!"
-            redirect_to user_path
+            redirect_to user_path(@user)
         else
             flash.alert = "user NOT saved!"
         end
@@ -21,6 +21,6 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:id, :name, :username, :email)
+        params.require(:user).permit(:id, :name, :username, :email, :password)
     end
 end
