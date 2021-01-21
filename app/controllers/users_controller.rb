@@ -12,11 +12,10 @@ class UsersController < ApplicationController
 
         if @user.save
             flash.notice = "user saved!"
+            redirect_to user_path
         else
             flash.alert = "user NOT saved!"
         end
-
-        redirect_to user_url(@user)
     end
 
     private

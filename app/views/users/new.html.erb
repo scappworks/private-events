@@ -1,6 +1,6 @@
 <h1>This is the new viewer page!</h1>
 
-<%= form_for @user, controller: 'users', action: 'create' do |f| %>
+<%= form_for(@user) do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %><br>
 
@@ -9,6 +9,9 @@
 
     <%= f.label :email %>
     <%= f.text_field :email %>
+
+    <%= f.label :password %>
+    <%= f.text_field :password %>
 
     <%= f.submit %>
 <% end %>
