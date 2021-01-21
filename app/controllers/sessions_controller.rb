@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
             redirect_to user_path(@user)
         else
             flash.now[:alert] = "something is wrong"
-            redirect_to new_session_path
+            render "new"
         end
     end
 
