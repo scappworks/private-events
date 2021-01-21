@@ -16,7 +16,7 @@
     <%= f.submit %>
 <% end %>
 
-<%= form_for @user, method: :post do |f| %>
+<%= form_with model: @user, action: :post do |f| %>
     <%= f.label :id %>
     <%= f.text_field :id %>
     <%= f.submit "Sign in" %>
