@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :sessions
 
   get "/login", to: "sessions#new"
-  post "/login", to: "sessions#create"
+  post "/login", to: "sessions#create", via: :"post"
   delete "/logout", to: "sessions#destroy"
 
   root "users#new"
