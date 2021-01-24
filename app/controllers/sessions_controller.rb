@@ -3,14 +3,14 @@ class SessionsController < ApplicationController
     end
 
     def create
-        @user = User.find_by_id(params[:id])
-        if @user && @user.authenticate(params[:id][:password_digest])
+        @user = User.find_by(id: params[:id])
+        if @user && @user.authenticate(params[:password])
             session[:id] = @user.id
-            flash.now[:notice] = "user logged in"
+            flash[:notice] = "user logged in"
             redirect_to user_path(@user)
         else
-            flash.now[:alert] = "something is wrong"
-            redirect_to root_path
+            flash[:alert] = "something is wrong"
+            render :new
         end
     end
 
