@@ -2,6 +2,19 @@
 
 <h2>Signed in as user <%= @user.username %>!</h2>
 
+<div id="new_event">
+    <%= form_with model: @event do |f| %>
+        <h2>Create New Event</h2>
+        <%= f.label :event_name %>
+        <%= f.text_field :event_name %>
+
+        <%= f.label :event_description %>
+        <%= f.text_area :event_description %>
+
+        <%= f.submit %>
+    <% end %>
+</div>
+
 <div id="created_events">
     <h2>Created Events</h2>
     <% @user.events.each do |event| %>
