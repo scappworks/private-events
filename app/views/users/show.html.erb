@@ -3,7 +3,8 @@
 <h2>Signed in as user <%= @user.username %>!</h2>
 
 <div id="created_events">
+    <h2>Created Events</h2>
     <% @user.events.each do |event| %>
-        <h2><%= event.event_name %></h2>
+        <h3><%= event.event_name %></h3>
     <% end %>
 </div>
