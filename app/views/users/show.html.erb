@@ -21,3 +21,17 @@
         <h3><%= event.event_name %></h3>
     <% end %>
 </div>
+
+<h2><%= @user.username %>'s upcoming events</h2>
+<% @user.attended_events do |e| %>
+    <% if e.event_date >= Date.today %>
+        <%= e.event_name %>
+    <% end %>
+<% end %>
+
+<h2><%= @user.username %>'s past events</h2>
+<% @user.attended_events do |e| %>
+    <% if e.event_date < Date.today %>
+        <%= e.event_name %>
+    <% end %>
+<% end %>

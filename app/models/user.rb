@@ -2,6 +2,7 @@ class User < ApplicationRecord
     has_secure_password
 
     has_many :events
+    has_many :enrollments
     has_many :attended_events, through: :enrollments, source: :event
 
     def user_params

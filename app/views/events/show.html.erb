@@ -1,3 +1,9 @@
 <h1>This is an event view!</h1>
 
+<h2>Creator</h2>
 <%= @event.creator.username %>
+
+<h2>Attending</h2>
+<% @event.attendees.each do |a| %>
+    <%= a.username %>
+<% end %>
