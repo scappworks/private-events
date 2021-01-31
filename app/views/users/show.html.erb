@@ -23,15 +23,13 @@
 </div>
 
 <h2><%= @user.username %>'s upcoming events</h2>
-<% @user.attended_events do |e| %>
-    <% if e.event_date >= Date.today %>
-        <%= e.event_name %>
-    <% end %>
+<% @user.attended_events.where("event_date >= ?", Date.today).each do |e| %>
+    <%= e.event_name %><br><br>
 <% end %>
 
+<br>
+
 <h2><%= @user.username %>'s past events</h2>
-<% @user.attended_events do |e| %>
-    <% if e.event_date < Date.today %>
-        <%= e.event_name %>
-    <% end %>
+<% @user.attended_events.where("event_date < ?", Date.today).each do |e| %>
+    <%= e.event_name %><br><br>
 <% end %>

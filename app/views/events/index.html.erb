@@ -1,19 +1,23 @@
 <h1>Events Index Page</h1>
 
-<% @events.each do |e| %>
-<div>
-<h2>Past Events</h2>
-    <% if @event.event_date < Date.today %>
+<h2>Upcoming Events</h2>
+ <div>
+    <% @events.each do |e| %>
+        <% if e.event_date >= Date.today %>
             <%= e.event_name %><br>
             <%= e.event_description %><br>
             <%= e.creator.username %><br><br>
-        </div>
-        <div>
-        <h2>Upcoming Events</h2>
-    <% else %>
-            <%= e.event_name %><br>
-            <%= e.event_description %><br>
-            <%= e.creator.username %><br><br>
-        </div>
+        <% end %>
     <% end %>
-<% end %>
+</div>
+
+<h2>Past Events</h2>
+<div>
+    <% @events.each do |e| %>
+        <% if e.event_date < Date.today %>
+            <%= e.event_name %><br>
+            <%= e.event_description %><br>
+            <%= e.creator.username %><br><br>
+        <% end %>
+    <% end %>
+</div>
