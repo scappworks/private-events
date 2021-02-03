@@ -22,12 +22,12 @@ class EventsController < ApplicationController
             flash.alert = "Event not created!"
         end
 
-        redirect_to event_path(@event)
+        redirect_to user_path(@event.user_id)
     end
 
     private
 
     def event_params
-        params.require(:event).permit(:event_name, :event_description, :event_date, :user_id)
+        params.permit(:event_name, :event_description, :event_date, :user_id)
     end
 end

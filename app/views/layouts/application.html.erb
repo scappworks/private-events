@@ -10,6 +10,14 @@
   </head>
 
   <body>
+    <nav id="navbar">
+      <div><%= link_to "Create Event", new_event_path %></div>
+      <div><%= link_to "Sign in", login_path %></div>
+      <div><%= link_to "Sign up", new_user_path %></div>
+      <div><%= link_to "Home", events_path %></div>
+      <div><%= link_to "Sign out", logout_path, method: :delete %></div>
+    </nav>
+
     <% flash.each do |type, msg| %>
       <div>
         <%= msg %>
