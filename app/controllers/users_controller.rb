@@ -14,12 +14,12 @@ class UsersController < ApplicationController
 
         if @user.save
             flash.notice = "user saved!"
-            
+            session[:id] = @user.id
+            redirect_to user_path(@user)
         else
             flash.alert = "user NOT saved!"
+            redirect_to root_path
         end
-
-        redirect_to user_path(@user)
     end
 
     private
