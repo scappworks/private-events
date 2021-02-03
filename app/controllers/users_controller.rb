@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+    before_action :check_if_logged_in, only: [:new, :create]
+    
     def show
         @user = User.find(params[:id])
     end
