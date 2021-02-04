@@ -16,6 +16,7 @@
         <div><%= link_to "Home", user_path(session[:id]) %></div>
         <div><%= link_to "Sign out", logout_path, method: :delete %></div>
       <% else %>
+        <div><%= link_to "All events", events_path %></div>
         <div><%= link_to "Sign up", new_user_path %></div>
         <div><%= link_to "Sign in", login_path %></div>
       <% end %>

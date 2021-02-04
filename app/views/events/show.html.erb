@@ -1,9 +1,22 @@
-<h1>This is an event view!</h1>
+<h1><%= @event.event_name %></h1>
+
+<% if @event.event_date.past? %>
+    <h2>This event has passed</h2>
+<% else %>
+    <h2><%= @event.event_date %></h2>
+<% end %>
+
+<h2>Description</h2>
+<%= @event.event_description %>
 
 <h2>Creator</h2>
 <%= @event.creator.username %>
 
 <h2>Attending</h2>
-<% @event.attendees.each do |a| %>
-    <%= a.username %>
+<% if @event.attendees.count == 0 %>
+    <h4>No current attendees...</h4>
+<% else %>
+    <% @event.attendees.each do |a| %>
+        <%= a.username %>
+    <% end %>
 <% end %>
