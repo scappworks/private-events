@@ -13,6 +13,12 @@
 <%= @event.creator.username %>
 
 <h2>Attending</h2>
+<% if current_user %>
+    <%= form_with model: @event, url: "/enrollments#create" do |f|%>
+        <%= f.submit "Attend this event" %>
+    <% end %> <br>
+<% end %>
+
 <% if @event.attendees.count == 0 %>
     <h4>No current attendees...</h4>
 <% else %>
