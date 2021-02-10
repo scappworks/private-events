@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
     end
 
     def create
-        @user = User.find_by(id: params[:id])
+        @user = User.find_by(username: params[:username])
         if @user
             session[:id] = @user.id
             flash[:notice] = "user logged in"
