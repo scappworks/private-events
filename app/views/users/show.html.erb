@@ -12,19 +12,19 @@
 
 <div id="created_events">
     <h2>Created Events</h2>
-    <% @user.events.each do |event| %>
-        <h3><%= event.event_name %></h3>
+    <% @user.events.each do |e| %>
+        <h3><%= link_to e.event_name, event_path(e) %></h3>
     <% end %>
 </div>
 
 <h2><%= @user.username %>'s upcoming events</h2>
 <% @user.attended_events.upcoming.each do |e| %>
-    <%= e.event_name %><br><br>
+    <%= link_to e.event_name, event_path(e) %><br><br>
 <% end %>
 
 <br>
 
 <h2><%= @user.username %>'s past events</h2>
 <% @user.attended_events.past.each do |e| %>
-    <%= e.event_name %><br><br>
+    <%= link_to e.event_name, event_path(e) %><br><br>
 <% end %>

@@ -19,10 +19,16 @@
         <%= f.text_field :user_id %>
         <%= f.submit "Invite to this event" %>
     <% end %> <br>
+
+    <%= form_with model: @enrollment, url: uninvite_path, method: :delete do |f| %>
+        <%= f.hidden_field :event_id, :value => params[:id] %>
+        <%= f.text_field :user_id %>
+        <%= f.submit "Uninvite to this event" %>
+    <% end %> <br>
 <% end %>
 
 <% if @event.attendees.count == 0 %>
-    <h4>No current attendees...</h4>
+    <h4>No invitations sent...</h4>
 <% else %>
     <% @event.attendees.each do |a| %>
         <%= a.username %>

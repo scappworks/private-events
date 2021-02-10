@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
   post "/invite", to: "enrollments#create"
+  delete "/uninvite", to: "enrollments#destroy"
 
   root "events#index"
 end
