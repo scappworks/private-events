@@ -13,9 +13,11 @@
 <%= @event.creator.username %>
 
 <h2>Attending</h2>
-<% if current_user %>
-    <%= form_with model: @event, url: "/enrollments#create" do |f|%>
-        <%= f.submit "Attend this event" %>
+<% if current_user && current_user == @event.creator %>
+    <%= form_with model: @enrollment, url: invite_path do |f| %>
+        <%= f.hidden_field :event_id, :value => params[:id] %>
+        <%= f.text_field :user_id %>
+        <%= f.submit "Invite to this event" %>
     <% end %> <br>
 <% end %>
 
