@@ -13,16 +13,16 @@
 <%= @event.creator.username %>
 
 <h2>Invited</h2>
-<% if current_user && current_user == @event.creator %>
+<% if current_user %>
     <%= form_with model: @enrollment, url: invite_path do |f| %>
         <%= f.hidden_field :event_id, :value => params[:id] %>
-        <%= f.text_field :user_id %>
+        <%= f.text_field :username %>
         <%= f.submit "Invite to this event" %>
     <% end %> <br>
 
     <%= form_with model: @enrollment, url: uninvite_path, method: :delete do |f| %>
         <%= f.hidden_field :event_id, :value => params[:id] %>
-        <%= f.text_field :user_id %>
+        <%= f.text_field :username %>
         <%= f.submit "Uninvite to this event" %>
     <% end %> <br>
 <% end %>
