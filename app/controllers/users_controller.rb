@@ -17,7 +17,7 @@ class UsersController < ApplicationController
             session[:id] = @user.id
             redirect_to user_path(@user)
         else
-            flash.alert = "user NOT saved!"
+            flash.alert = @user.errors.full_messages
             redirect_to root_path
         end
     end
