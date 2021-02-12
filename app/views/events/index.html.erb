@@ -1,32 +1,31 @@
-<h1>Events Index Page</h1>
-
 <% if current_user %>
-    <h2>Signed in as <%= current_user.username %></h2>
+    <h2 class="is-size-1">Signed in as <%= current_user.username %></h2>
 <% end %>
 
-<h2>Upcoming Events</h2>
-<div>
+<h2 class="is-size-2 has-text-centered">Upcoming Events</h2>
+<div class="index-events">
     <% @events.upcoming.each do |e| %>
-        <%= link_to event_path(e) do %>
-            <div>
+        <div class="has-text-centered">
+            <%= link_to event_path(e) do %>
                 <%= e.event_name %><br>
                 <%= e.event_description %><br>
                 <%= e.creator.username %>
-            </div>
-        <% end %>
+            <% end %>
+        </div>
+        
         <br>
     <% end %>
 </div>
 
-<h2>Past Events</h2>
-<div>
+<h2 class="is-size-2 has-text-centered">Past Events</h2>
+<div class="index-events">
     <% @events.past.each do |e| %>
-        <%= link_to event_path(e) do %>
-            <div>
+        <div class="has-text-centered">
+            <%= link_to event_path(e) do %>
                 <%= e.event_name %><br>
                 <%= e.event_description %><br>
                 <%= e.creator.username %><br><br>
-            </div>
-        <% end %>
+            <% end %>
+        </div>
     <% end %>
 </div>
