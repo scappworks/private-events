@@ -1,36 +1,38 @@
-<h1><%= @event.event_name %></h1>
+<div class="container has-text-centered p-3">
+    <h1 class="title pt-3"><%= @event.event_name %></h1>
 
-<% if @event.event_date.past? %>
-    <h2>This event has passed</h2>
-<% else %>
-    <h2><%= @event.event_date %></h2>
-<% end %>
-
-<h2>Description</h2>
-<%= @event.event_description %>
-
-<h2>Creator</h2>
-<%= @event.creator.username %>
-
-<h2>Invited</h2>
-<% if current_user %>
-    <%= form_with model: @enrollment, url: invite_path do |f| %>
-        <%= f.hidden_field :event_id, :value => params[:id] %>
-        <%= f.text_field :username %>
-        <%= f.submit "Invite to this event" %>
-    <% end %> <br>
-
-    <%= form_with model: @enrollment, url: uninvite_path, method: :delete do |f| %>
-        <%= f.hidden_field :event_id, :value => params[:id] %>
-        <%= f.text_field :username %>
-        <%= f.submit "Uninvite to this event" %>
-    <% end %> <br>
-<% end %>
-
-<% if @event.attendees.count == 0 %>
-    <h4>No invitations sent...</h4>
-<% else %>
-    <% @event.attendees.each do |a| %>
-        <%= a.username %>
+    <% if @event.event_date.past? %>
+        <h2 class="is-size-2 has-text-danger pb-3"><span style="color:black">Date: </span>This event has passed</h2>
+    <% else %>
+        <h2 class="is-size-4 has-text-success pb-3"><span style="color:black">Date: </span><%= @event.event_date %></h2>
     <% end %>
-<% end %>
+
+    <h2 class="has-text-weight-bold is-size-4">Description</h2>
+    <%= @event.event_description %>
+
+    <h2 class="has-text-weight-bold is-size-4">Creator</h2>
+    <%= @event.creator.username %>
+
+    <h2 class="has-text-weight-bold is-size-4">Invited</h2>
+    <% if current_user %>
+        <%= form_with model: @enrollment, url: invite_path do |f| %>
+            <%= f.hidden_field :event_id, :value => params[:id] %>
+            <%= f.text_field :username %>
+            <%= f.submit "Invite to this event" %>
+        <% end %> <br>
+
+        <%= form_with model: @enrollment, url: uninvite_path, method: :delete do |f| %>
+            <%= f.hidden_field :event_id, :value => params[:id] %>
+            <%= f.text_field :username %>
+            <%= f.submit "Uninvite to this event" %>
+        <% end %> <br>
+    <% end %>
+
+    <% if @event.attendees.count == 0 %>
+        <h4 class="has-text-weight-bold is-size-5">No invitations sent...</h4>
+    <% else %>
+        <% @event.attendees.each do |a| %>
+            <%= a.username %>
+        <% end %>
+    <% end %>
+</div>
