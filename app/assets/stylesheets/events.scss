@@ -13,6 +13,8 @@
 #index-event-list {
     display: flex;
     overflow-x: scroll;
+    border: solid 1px black;
+    padding-top: 1%;
 }
 
 #index-event-cards {

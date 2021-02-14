@@ -10,19 +10,19 @@
   </head>
 
   <body>
-    <div class="p-5 text-centered">
-      <p class="title is-size-1 has-text-centered">Title!</p>
+    <div class="p-4 text-centered">
+      <p class="title is-size-1 mt-5 has-text-centered">Title!</p>
     </div>
 
-    <nav class="navbar">
+    <nav class="navbar mt-5 mb-3">
       <% if current_user %>
-        <%= link_to "Events", events_path, :class => "navbar-item is-size-4 button is-primary m-5 has-text-link" %>
-        <%= link_to "Home", user_path(session[:id]), :class => "navbar-item is-size-4 button is-primary m-5 has-text-link" %>
-        <%= link_to "Sign out", logout_path, method: :delete, :class => "navbar-item is-size-4 button is-primary m-5 has-text-link" %>
+        <%= link_to "Events", events_path, :class => "navbar-item is-size-5 button is-primary m-3 has-text-link" %>
+        <%= link_to "Home", user_path(session[:id]), :class => "navbar-item is-size-5 button is-primary m-3 has-text-link" %>
+        <%= link_to "Sign out", logout_path, method: :delete, :class => "navbar-item is-size-5 button is-primary m-3 has-text-link" %>
       <% else %>
-        <%= link_to "Events", events_path, :class => "navbar-item is-size-4 button is-primary m-5 has-text-link" %>
-        <%= link_to "Sign up", new_user_path, :class => "navbar-item is-size-4 button is-primary m-5 has-text-link" %>
-        <%= link_to "Sign in", login_path, :class => "navbar-item is-size-4 button is-primary m-5 has-text-link" %>
+        <%= link_to "Events", events_path, :class => "navbar-item is-size-5 button is-primary ml-4 mr-4 has-text-link" %>
+        <%= link_to "Sign up", new_user_path, :class => "navbar-item is-size-5 button is-primary ml-4 mr-4 has-text-link" %>
+        <%= link_to "Sign in", login_path, :class => "navbar-item is-size-5 button is-primary ml-4 mr-4 has-text-link" %>
       <% end %>
     </nav>
 
