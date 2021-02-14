@@ -25,7 +25,12 @@
      justify-content: center;
  }
 
- .alert-message {
+ .alert {
      background-color: red;
      color: black;
+ }
+
+ .notice {
+     background-color: blue;
+     color: white;
  }
