@@ -15,12 +15,13 @@
     overflow-x: scroll;
     border: solid 1px black;
     padding-top: 1%;
+    width: 101%;
 }
 
 #index-event-cards {
     display: flex;
-    height: 200px;
-    width: 200px;
+    height: 180px;
+    width: 180px;
     align-items: center;
     justify-content: center;
     border: solid 1px black;

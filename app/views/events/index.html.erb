@@ -1,8 +1,4 @@
-<% if current_user %>
-    <h2 class="is-size-4 pl-4">Signed in as <%= current_user.username %></h2>
-<% end %>
-
-<h2 class="is-size-2 has-text-centered">Upcoming Events</h2>
+<h2 class="is-size-3 has-text-centered">Upcoming Events</h2>
 <div class="index-events">
     <ul id="index-event-list">
         <% @events.upcoming.each do |e| %>
@@ -19,7 +15,7 @@
     </ul>
 </div>
 
-<h2 class="is-size-2 has-text-centered">Past Events</h2>
+<h2 class="is-size-3 has-text-centered">Past Events</h2>
 <div class="index-events">
     <ul id="index-event-list">
         <% @events.past.each do |e| %>

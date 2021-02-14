@@ -27,9 +27,9 @@
     </nav>
 
     <% flash.each do |type, msg| %>
-      <div class="alert is-size-1">
+      <div class="alert-message is-size-4">
         <%= msg %>
-      </div><br>
+      </div>
     <% end %>
     <%= yield %>
   </body>
