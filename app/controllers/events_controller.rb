@@ -17,6 +17,7 @@ class EventsController < ApplicationController
 
         if @event.save
             flash.notice = "Event created!"
+            create_enrollment(@event.id, current_user.username)
         else
             flash.alert = "Event not created!"
         end
