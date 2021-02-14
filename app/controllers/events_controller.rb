@@ -17,7 +17,6 @@ class EventsController < ApplicationController
 
         if @event.save
             flash.notice = "Event created!"
-            
         else
             flash.alert = "Event not created!"
         end
