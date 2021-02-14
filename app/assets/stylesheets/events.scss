@@ -10,7 +10,16 @@
     bottom: 0;
 }
 
-.index-events {
-    padding-left: 20%;
-    padding-right: 20%;
+#index-event-list {
+    display: flex;
+    overflow-x: scroll;
+}
+
+#index-event-cards {
+    display: flex;
+    height: 200px;
+    width: 200px;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px black;
 }
