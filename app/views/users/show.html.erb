@@ -13,19 +13,19 @@
     <br>
 
     <div id="created_events" class="has-text-centered is-size-5">
-        <h2>Created Events</h2>
+        <h2 class="title">Created Events</h2>
         <% @user.events.each do |e| %>
             <h3><%= link_to e.event_name, event_path(e) %></h3>
         <% end %>
     </div>
 
     <div id="attended-events" class="has-text-centered is-size-5">
-        <h2><%= @user.username %>'s upcoming events</h2>
+        <h2 class="title"><%= @user.username %>'s upcoming events</h2>
         <% @user.attended_events.upcoming.each do |e| %>
             <%= link_to e.event_name, event_path(e) %><br>
         <% end %>
 
-        <h2><%= @user.username %>'s past events</h2>
+        <h2 class="title"><%= @user.username %>'s past events</h2>
         <% @user.attended_events.past.each do |e| %>
             <%= link_to e.event_name, event_path(e) %><br>
         <% end %>
