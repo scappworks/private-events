@@ -1,5 +1,5 @@
 This project is hosted on Heroku:
-https://arcane-sands-30651.herokuapp.com/
+https://salty-stream-72127.herokuapp.com/
 
 this is a project on The Odin Project, linked at the bottom.
 
