@@ -32,7 +32,7 @@
         <h4 class="has-text-weight-bold is-size-5">No invitations sent...</h4>
     <% else %>
         <% @event.attendees.each do |a| %>
-            <%= a.username %>
+            <%= a.username %><br>
         <% end %>
     <% end %>
 </div>
