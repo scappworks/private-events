@@ -6,8 +6,7 @@
                 <%= link_to event_path(e) do %>
                     <div id="index-event-cards" class="card has-text-centered ml-1 mr-1">
                         <%= e.event_name %><br>
-                        <%= e.event_description %><br>
-                        <%= e.creator.username %>
+                        <%= e.event_description %>
                     </div>
                 <% end %>
             </li>
@@ -24,7 +23,6 @@
                     <div id="index-event-cards" class="card has-text-centered ml-1 mr-1">
                         <%= e.event_name %><br>
                         <%= e.event_description %><br>
-                        <%= e.creator.username %><br><br>
                     </div>
                 <% end %>
             </li>

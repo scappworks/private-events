@@ -5,28 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-users = User.create([{ :name => "userone", :username => "userone", :email => "userone@email.com", :password => "password" },
-    { :name => "usertwo", :username => "usertwo", :email => "usertwo@email.com", :password => "password" },
-    { :name => "userthree", :username => "userthree", :email => "userthree@email.com", :password => "password" },
-    { :name => "userfour", :username => "userfour", :email => "userfour@email.com", :password => "password" },
-    { :name => "userfive", :username => "userfive", :email => "userfive@email.com", :password => "password" },
-    { :name => "usersix", :username => "usersix", :email => "usersix@email.com", :password => "password" },
-    { :name => "userseven", :username => "userseven", :email => "userseven@email.com", :password => "password" }])
 
-events = Event.create([{ :event_name => "Event one", :event_date => "2015-01-01", :user_id => 1, :event_description => "This is event number one!" },
-    { :event_name => "Event two", :event_date => "2016-01-01", :user_id => 1, :event_description => "This is event number two!" },
-    { :event_name => "Event three", :event_date => "2017-01-01", :user_id => 2, :event_description => "This is event number three!" },
-    { :event_name => "Event four", :event_date => "2018-01-01", :user_id => 3, :event_description => "This is event number four!" },
-    { :event_name => "Event five", :event_date => "2019-01-01", :user_id => 4, :event_description => "This is event number five!" },
-    { :event_name => "Event six", :event_date => "2020-01-01", :user_id => 5, :event_description => "This is event number six!" },
-    { :event_name => "Event seven", :event_date => "2021-01-01", :user_id => 6, :event_description => "This is event number seven!" },
-    { :event_name => "Event eight", :event_date => "2022-01-01", :user_id => 7, :event_description => "This is event number eight!" }])
+events = Event.create([{ :event_name => "Event seventeen", :event_date => "2023-01-01", :user_id => 2, :event_description => "This is event number seventeen!" },
+    { :event_name => "Event eighteen", :event_date => "2023-01-01", :user_id => 3, :event_description => "This is event number eighteen!" },
+    { :event_name => "Event nineteen", :event_date => "2023-01-01", :user_id => 4, :event_description => "This is event number nineteen!" },
+    { :event_name => "Event twenty", :event_date => "2023-01-01", :user_id => 5, :event_description => "This is event number twenty!" },
+    { :event_name => "Event twentyone", :event_date => "2021-01-01", :user_id => 6, :event_description => "This is event number twentyone!" },
+    { :event_name => "Event twentytwo", :event_date => "2021-01-01", :user_id => 7, :event_description => "This is event number twentytwo!" },
+    { :event_name => "Event twentythree", :event_date => "2021-01-01", :user_id => 1, :event_description => "This is event number twentythree!" },
+    { :event_name => "Event twentyfour", :event_date => "2021-01-01", :user_id => 2, :event_description => "This is event number twentyfour!" }])
 
-enrollments = Enrollment.create([{ :user_id => 1, :event_id => 1 },
-    { :user_id => 1, :event_id => 2 },
-    { :user_id => 2, :event_id => 3 },
-    { :user_id => 3, :event_id => 4 },
-    { :user_id => 4, :event_id => 5 },
-    { :user_id => 5, :event_id => 6 },
-    { :user_id => 6, :event_id => 7 },
-    { :user_id => 7, :event_id => 8 }])
+enrollments = Enrollment.create([{ :user_id => 2, :event_id => 17 },
+    { :user_id => 3, :event_id => 18 },
+    { :user_id => 4, :event_id => 19 },
+    { :user_id => 5, :event_id => 20 },
+    { :user_id => 6, :event_id => 21 },
+    { :user_id => 7, :event_id => 22 },
+    { :user_id => 1, :event_id => 23 },
+    { :user_id => 2, :event_id => 24}])
