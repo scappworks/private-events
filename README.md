@@ -1,3 +1,6 @@
+This project is hosted on Heroku:
+https://arcane-sands-30651.herokuapp.com/
+
 this is a project on The Odin Project, linked at the bottom.
 
 Private-events is an app designed for users to be able to create events, invite other users, and accept invites to others events themselves.
